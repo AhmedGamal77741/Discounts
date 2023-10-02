@@ -26,7 +26,7 @@ class BuildtTop extends StatelessWidget {
           child: BuildProfile(profileheight: profileheight),
         ),
         Positioned(
-          bottom: postion-25,
+          bottom: postion-40,
           left: 375,
           child: const BackButton(),
         )
@@ -44,7 +44,7 @@ class BackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
     onPressed: (){},
-     icon: const Icon(Icons.arrow_forward,color: Colors.grey,),
+     icon: const Icon(Icons.arrow_forward,color: Colors.black,),
      );
   }
 }

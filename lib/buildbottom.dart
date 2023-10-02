@@ -7,14 +7,33 @@ class BuildBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20,0),
+    return  const Padding(
+      padding: EdgeInsets.fromLTRB(20, 0, 20,0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-         ElevatedButton(
-          onPressed: (){},
-          style: ElevatedButton.styleFrom(
+         Btn(),
+           SizedBox(height:20),
+           SocialCard(),
+        ],
+    
+      ),
+    );
+  }
+  
+
+}
+
+class Btn extends StatelessWidget {
+  const Btn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+     onPressed: (){},
+     style: ElevatedButton.styleFrom(
         backgroundColor: Colors.yellow,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
@@ -22,9 +41,16 @@ class BuildBottom extends StatelessWidget {
       ),
       child:const Text('Review Store'),
     
-           ),
-           const SizedBox(height:20),
-           Card(
+      );
+  }
+}
+
+class SocialCard extends StatelessWidget {
+  const SocialCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
             elevation: 3,
             child: Padding(
               padding: const EdgeInsets.only(left: 3),
@@ -40,11 +66,7 @@ class BuildBottom extends StatelessWidget {
                 ],
               ),
             ),
-           )
-        ],
-    
-      ),
-    );
+           ) ;
   }
   Future<void> _launchFace() async {
   String url ='https://www.facebook.com/McDonaldsEgypt';
@@ -58,5 +80,4 @@ Future<void> _launchX() async {
     throw Exception('Could not launch $url');
   }
 }
-
 }
